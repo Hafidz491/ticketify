@@ -43,3 +43,6 @@ next-env.d.ts
 # agent and AI instructions (strictly local only)
 AGENTS.md
 CLAUDE.md
+
+# ide
+.vscode/
