@@ -1,0 +1,49 @@
+[
+  {
+    "_id": "usr-admin-1",
+    "name": "Admin Promotor Ticketify",
+    "email": "admin@ticketify.com",
+    "passwordHash": "e63ff9dcfe6dc29e89be18659385cacd3f80540137f7e2e7f119bfa582bbcde4971d18cebba949fdf9cd4e857efba942d6919f8577e9bab4145aa697fb1bf94c",
+    "passwordSalt": "ticketify_admin_salt_2026",
+    "role": "admin",
+    "phone": "081199887766",
+    "identityNumber": "3171099999990001",
+    "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80",
+    "bio": "Promotor resmi Ticketify Indonesia. Pengelola konser musik akbar dan festival.",
+    "savedEventIds": [],
+    "createdAt": "2026-09-25T13:47:25.260Z"
+  },
+  {
+    "_id": "usr-demo-1",
+    "name": "Alex Pratama (Pengguna)",
+    "email": "user@ticketify.com",
+    "passwordHash": "602e37a23ee616ad23e08eec16417fccc8581d0203f7f9b779baf0d43a705007981bca4cab794b320f49d0f412ac931394af3e85d1602126578f3cf6b00233b1",
+    "passwordSalt": "ticketify_salt_demo_2026",
+    "role": "user",
+    "phone": "081234567890",
+    "identityNumber": "3171012345670001",
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80",
+    "bio": "Music enthusiast & festival goer. Suka konser musik rock, jazz, dan orkestra.",
+    "savedEventIds": [
+      "evt-101"
+    ],
+    "createdAt": "2026-09-25T13:47:25.261Z"
+  },
+  {
+    "_id": "usr-demo-2",
+    "name": "Alex Pratama",
+    "email": "alex@ticketify.com",
+    "passwordHash": "602e37a23ee616ad23e08eec16417fccc8581d0203f7f9b779baf0d43a705007981bca4cab794b320f49d0f412ac931394af3e85d1602126578f3cf6b00233b1",
+    "passwordSalt": "ticketify_salt_demo_2026",
+    "role": "user",
+    "phone": "081234567890",
+    "identityNumber": "3171012345670001",
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80",
+    "bio": "Music enthusiast & festival goer.",
+    "savedEventIds": [
+      "evt-101",
+      "evt-103"
+    ],
+    "createdAt": "2026-09-25T13:47:25.261Z"
+  }
+]

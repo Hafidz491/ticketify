@@ -1,0 +1,287 @@
+[
+  {
+    "_id": "evt-1790346031708",
+    "title": "Hafidz Live in Metro Lampung",
+    "slug": "hafidz-live-in-metro-lampung-1708",
+    "artist": "Hafidz H",
+    "category": "Concert",
+    "date": "2026-11-04",
+    "time": "19:30 WIB",
+    "venue": "Taman Metro",
+    "city": "Metro",
+    "image": "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80",
+    "description": "konser pertama",
+    "lineup": [
+      "Hafidz H"
+    ],
+    "terms": [
+      "Wajib membawa kartu identitas diri resmi.",
+      "Tiket tidak dapat di-refund atau dipindahtangankan tanpa izin."
+    ],
+    "isFeatured": true,
+    "organizer": "Admin Promotor Ticketify",
+    "ticketTiers": [
+      {
+        "id": "tier-init-1",
+        "name": "Festival Regular (Standing)",
+        "price": 650000,
+        "quota": 1500,
+        "available": 1499,
+        "perks": [
+          "Akses area festival depan panggung",
+          "Free gelang festival"
+        ]
+      },
+      {
+        "id": "tier-init-2",
+        "name": "VIP Front Row Experience",
+        "price": 1850000,
+        "quota": 300,
+        "available": 300,
+        "perks": [
+          "Akses area khusus terdepan panggung",
+          "Lounge VIP ber-AC",
+          "Official Merch T-Shirt"
+        ]
+      }
+    ],
+    "seatingImage": "/seating/stadium-arena.svg"
+  },
+  {
+    "_id": "evt-103",
+    "title": "NIKI: The Buzz World Tour - Asia Finale",
+    "slug": "niki-the-buzz-world-tour-jakarta",
+    "artist": "NIKI (Nicole Zefanya)",
+    "category": "Concert",
+    "date": "2026-12-05",
+    "time": "19:00 WIB",
+    "venue": "ICE BSD Hall 5-6",
+    "city": "Tangerang",
+    "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80",
+    "description": "Penyanyi dan penulis lagu kebanggaan Indonesia, NIKI, kembali pulang dengan penampilan termegah untuk menutup tur dunia album terbarunya \"Buzz\". Bersiap bernyanyi bersama untuk Oceans & Engines, Lowkey, Backburner, dan High School in Jakarta.",
+    "lineup": [
+      "NIKI",
+      "Special Opening Acts from 88rising"
+    ],
+    "terms": [
+      "Semua kategori festival berdiri bebas.",
+      "Dilarang membawa banner berukuran lebih dari A4.",
+      "Sediakan kartu vaksinasi / sertifikat kesehatan bila diperlukan."
+    ],
+    "isFeatured": true,
+    "organizer": "88rising & AEG Presents",
+    "ticketTiers": [
+      {
+        "id": "niki-1",
+        "name": "Early Bird Festival",
+        "price": 950000,
+        "quota": 1000,
+        "available": 12,
+        "perks": [
+          "Tiket festival dengan harga spesial",
+          "Akses masuk reguler"
+        ]
+      },
+      {
+        "id": "niki-2",
+        "name": "General Admission (GA)",
+        "price": 1350000,
+        "quota": 3500,
+        "available": 420,
+        "perks": [
+          "Akses seluruh area festival berdiri",
+          "Sensasi sing-along dekat panggung"
+        ]
+      },
+      {
+        "id": "niki-3",
+        "name": "VIP Experience Pass",
+        "price": 2750000,
+        "quota": 300,
+        "available": 45,
+        "perks": [
+          "Fast track queue",
+          "Priority front pit standing",
+          "Signed Tour Poster",
+          "Exclusive T-Shirt"
+        ]
+      }
+    ],
+    "seatingImage": "/seating/festival-open-air.svg"
+  },
+  {
+    "_id": "evt-104",
+    "title": "Sheila on 7: Tunggu Aku di Bandung 2026",
+    "slug": "sheila-on-7-tunggu-aku-di-bandung",
+    "artist": "Sheila on 7",
+    "category": "Concert",
+    "date": "2026-10-10",
+    "time": "18:30 WIB",
+    "venue": "Stadion Si Jalak Harupat",
+    "city": "Bandung",
+    "image": "https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1200&q=80",
+    "description": "Nostalgia tiada tara bersama Duta, Eross, dan Adam! Nyanyikan setiap lirik lagu masa remaja seperti Sephia, Dan, Melompat Lebih Tinggi, hingga Sahabat Sejati di bawah langit sejuk kota kembang Bandung.",
+    "lineup": [
+      "Sheila on 7",
+      "Goodnight Electric",
+      "The Adams"
+    ],
+    "terms": [
+      "Tiket yang sah hanya yang dibeli melalui platform resmi Ticketify.",
+      "Anak di bawah 5 tahun tidak dianjurkan memasuki area festival demi keselamatan."
+    ],
+    "isFeatured": false,
+    "organizer": "Antara Suara",
+    "ticketTiers": [
+      {
+        "id": "so7-1",
+        "name": "Festival Berdiri (Reguler)",
+        "price": 550000,
+        "quota": 6000,
+        "available": 310,
+        "perks": [
+          "Area rumput lapangan bola",
+          "Bebas berdiri dan bernyanyi"
+        ]
+      },
+      {
+        "id": "so7-2",
+        "name": "Tribun VIP Barat",
+        "price": 850000,
+        "quota": 2000,
+        "available": 95,
+        "perks": [
+          "Tempat duduk bernomor",
+          "Atap tribun terlindung",
+          "Snack box"
+        ]
+      },
+      {
+        "id": "so7-3",
+        "name": "Tribun Timur & Utara",
+        "price": 400000,
+        "quota": 8000,
+        "available": 1100,
+        "perks": [
+          "Tempat duduk tribun nyaman"
+        ]
+      }
+    ],
+    "seatingImage": "/seating/theater-hall.svg"
+  },
+  {
+    "_id": "evt-105",
+    "title": "Jakarta International Java Jazz Festival 2026",
+    "slug": "java-jazz-festival-2026",
+    "artist": "Various International & Local Artists",
+    "category": "Festival",
+    "date": "2026-11-20",
+    "time": "15:00 WIB",
+    "venue": "JIEXPO Kemayoran",
+    "city": "Jakarta",
+    "image": "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80",
+    "description": "Festival jazz tahunan terbesar di belahan bumi selatan. Menampilkan lebih dari 10 panggung musik bersamaan dengan deretan musisi jazz, R&B, soul, funk legendaris dunia dan talenta lokal berbakat.",
+    "lineup": [
+      "Laufey",
+      "Jacob Collier",
+      "Tom Misch",
+      "Maliq & D’Essentials",
+      "Kahitna",
+      "Andien"
+    ],
+    "terms": [
+      "Tiket 3-Day Pass berlaku untuk semua stage umum.",
+      "Special Show membutuhkan tiket tambahan tersendiri.",
+      "Gelang RFID wajib di-tap di setiap gerbang panggung."
+    ],
+    "isFeatured": false,
+    "organizer": "Java Festival Production",
+    "ticketTiers": [
+      {
+        "id": "jj-1",
+        "name": "Daily Pass (Friday)",
+        "price": 750000,
+        "quota": 3000,
+        "available": 640,
+        "perks": [
+          "Akses seluruh stage umum hari Jumat"
+        ]
+      },
+      {
+        "id": "jj-2",
+        "name": "Daily Pass (Saturday)",
+        "price": 900000,
+        "quota": 3500,
+        "available": 480,
+        "perks": [
+          "Akses seluruh stage umum hari Sabtu (Prime Day)"
+        ]
+      },
+      {
+        "id": "jj-3",
+        "name": "3-Day Full Pass Package",
+        "price": 1850000,
+        "quota": 2500,
+        "available": 215,
+        "perks": [
+          "Akses penuh Jumat, Sabtu, Minggu",
+          "Hemat 30%",
+          "Merchandise Pin Edisi 2026"
+        ]
+      }
+    ],
+    "seatingImage": "/seating/indoor-center-stage.svg"
+  },
+  {
+    "_id": "evt-106",
+    "title": "Dewa 19 Featuring All Stars: Stadium Tour 2026",
+    "slug": "dewa-19-all-stars-surabaya",
+    "artist": "Dewa 19 feat. Ari Lasso, Once Mekel, Ello, Virzha",
+    "category": "Concert",
+    "date": "2026-12-12",
+    "time": "19:00 WIB",
+    "venue": "Stadion Gelora Bung Tomo",
+    "city": "Surabaya",
+    "image": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1200&q=80",
+    "description": "Konser stadion kolosal persembahan Ahmad Dhani dan Dewa 19 berkolaborasi dengan gitaris dan vokalis rock legendaris Amerika & dunia. Lebih dari 35 lagu hits sepanjang 3 dekade.",
+    "lineup": [
+      "Dewa 19",
+      "Ari Lasso",
+      "Once Mekel",
+      "Virzha",
+      "Ello",
+      "Dino Jelusick",
+      "Derek Sherinian"
+    ],
+    "terms": [
+      "Pemeriksaan tas ketat di gerbang stadion.",
+      "Anak di bawah usia 12 tahun wajib didampingi orang tua berbayar."
+    ],
+    "isFeatured": false,
+    "organizer": "Otello Asia",
+    "ticketTiers": [
+      {
+        "id": "dewa-1",
+        "name": "Festival Reguler",
+        "price": 520000,
+        "quota": 5000,
+        "available": 840,
+        "perks": [
+          "Area lapangan berdiri"
+        ]
+      },
+      {
+        "id": "dewa-2",
+        "name": "VIP West Grandstand",
+        "price": 1250000,
+        "quota": 1500,
+        "available": 160,
+        "perks": [
+          "Numbered Seating VIP",
+          "Goodie Bag Baladewa"
+        ]
+      }
+    ],
+    "seatingImage": "/seating/stadium-arena.svg"
+  }
+]

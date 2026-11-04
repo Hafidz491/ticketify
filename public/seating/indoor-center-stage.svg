@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="arenaBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="100%" stop-color="#050814" />
+    </linearGradient>
+    <radialGradient id="centerStageGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="70%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="480" rx="16" fill="url(#arenaBg)" stroke="#1e293b" stroke-width="2" />
+
+  <!-- Layout Badge -->
+  <rect x="20" y="20" width="230" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="1" />
+  <text x="135" y="37" fill="#38bdf8" font-size="10" font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle">360° CENTER-STAGE ARENA</text>
+
+  <!-- Outer Ring: CAT 2 Tribune (Rectangle with rounded corners) -->
+  <rect x="50" y="65" width="500" height="370" rx="28" fill="none" stroke="#64748b" stroke-width="26" opacity="0.3" />
+  <text x="300" y="83" fill="#94a3b8" font-size="9" font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle" letter-spacing="1">CAT 2 • TRIBUN UTARA</text>
+  <text x="300" y="428" fill="#94a3b8" font-size="9" font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle" letter-spacing="1">CAT 2 • TRIBUN SELATAN</text>
+  <text x="68" y="250" fill="#94a3b8" font-size="9" font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle" transform="rotate(-90 68 250)">CAT 2 TRIBUN BARAT</text>
+  <text x="532" y="250" fill="#94a3b8" font-size="9" font-family="system-ui, sans-serif" font-weight="700" text-anchor="middle" transform="rotate(90 532 250)">CAT 2 TRIBUN TIMUR</text>
+
+  <!-- Mid Ring: CAT 1 Lower Ring -->
+  <rect x="105" y="110" width="390" height="280" rx="20" fill="none" stroke="#10b981" stroke-width="24" opacity="0.4" />
+  <text x="300" y="127" fill="#34d399" font-size="10" font-family="system-ui, sans-serif" font-weight="800" text-anchor="middle">CAT 1 • LOWER RING</text>
+  <text x="300" y="382" fill="#34d399" font-size="10" font-family="system-ui, sans-serif" font-weight="800" text-anchor="middle">CAT 1 • LOWER RING</text>
+
+  <!-- Inner Ring: VIP Ringside 360 -->
+  <circle cx="300" cy="250" r="85" fill="#f59e0b" fill-opacity="0.2" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6 3" />
+  <text x="300" y="180" fill="#fbbf24" font-size="9" font-family="system-ui, sans-serif" font-weight="800" text-anchor="middle">VIP RINGSIDE 360°</text>
+  <text x="300" y="325" fill="#fbbf24" font-size="9" font-family="system-ui, sans-serif" font-weight="800" text-anchor="middle">JARAK TERDEKAT</text>
+
+  <!-- Cross Catwalks -->
+  <line x1="190" y1="250" x2="410" y2="250" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+  <line x1="300" y1="140" x2="300" y2="360" stroke="#38bdf8" stroke-width="12" stroke-linecap="round" />
+
+  <!-- Center Stage Rotating Platform -->
+  <circle cx="300" cy="250" r="45" fill="url(#centerStageGrad)" stroke="#ffffff" stroke-width="2" />
+  <text x="300" y="247" fill="#ffffff" font-size="10" font-family="system-ui, sans-serif" font-weight="900" text-anchor="middle">CENTER</text>
+  <text x="300" y="260" fill="#ffffff" font-size="9" font-family="system-ui, sans-serif" font-weight="900" text-anchor="middle">STAGE 360°</text>
+</svg>
