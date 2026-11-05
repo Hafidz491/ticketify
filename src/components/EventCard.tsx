@@ -12,11 +12,18 @@ interface EventCardProps {
   onSelect: (event: IEvent) => void;
 }
 
+const DEFAULT_CONCERT_IMAGE = 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80';
+
 export default function EventCard({ event, index = 0, onSelect }: EventCardProps) {
   const { user, isEventSaved, toggleSaveEvent } = useAuth();
   const { t, language } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
+  const [imgSrc, setImgSrc] = useState(event.image || DEFAULT_CONCERT_IMAGE);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setImgSrc(event.image || DEFAULT_CONCERT_IMAGE);
+  }, [event.image]);
 
   const isSaved = isEventSaved(event._id) || isEventSaved(event.slug);
   const lowestPrice = Math.min(...event.ticketTiers.map((t) => t.price));
@@ -81,8 +88,10 @@ export default function EventCard({ event, index = 0, onSelect }: EventCardProps
         }}
       >
         <img
-          src={event.image}
+          src={imgSrc}
           alt={event.title}
+          loading="lazy"
+          onError={() => setImgSrc(DEFAULT_CONCERT_IMAGE)}
           style={{
             width: '100%',
             height: '100%',

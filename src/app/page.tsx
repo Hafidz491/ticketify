@@ -8,6 +8,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import EventCard from '@/components/EventCard';
+import EventCardSkeleton from '@/components/EventCardSkeleton';
 import EventDetailModal from '@/components/EventDetailModal';
 import CheckoutModal from '@/components/CheckoutModal';
 import ETicketModal from '@/components/ETicketModal';
@@ -222,30 +223,7 @@ export default function HomePage() {
           {isLoading && events.length === 0 ? (
             /* Only show skeleton on TRUE first load — if we have cached data, show it instead */
             <div className="events-grid">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
-                  key={i}
-                  className="glass-card"
-                  style={{
-                    height: '370px',
-                    borderRadius: 'var(--radius-lg)',
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column',
-                  }}
-                >
-                  <div className="skeleton-shimmer" style={{ width: '100%', height: '190px' }} />
-                  <div style={{ padding: '1.25rem 1.15rem', display: 'flex', flexDirection: 'column', gap: '0.85rem', flex: 1 }}>
-                    <div className="skeleton-shimmer" style={{ width: '35%', height: '14px', borderRadius: 'var(--radius-pill)' }} />
-                    <div className="skeleton-shimmer" style={{ width: '85%', height: '22px', borderRadius: 'var(--radius-xs)' }} />
-                    <div className="skeleton-shimmer" style={{ width: '60%', height: '14px', borderRadius: 'var(--radius-xs)' }} />
-                    <div style={{ marginTop: 'auto', borderTop: '1px solid var(--border-subtle)', paddingTop: '0.95rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <div className="skeleton-shimmer" style={{ width: '35%', height: '24px', borderRadius: 'var(--radius-xs)' }} />
-                      <div className="skeleton-shimmer" style={{ width: '30%', height: '32px', borderRadius: 'var(--radius-pill)' }} />
-                    </div>
-                  </div>
-                </div>
-              ))}
+              <EventCardSkeleton count={6} />
             </div>
           ) : events.length === 0 ? (
             <div
