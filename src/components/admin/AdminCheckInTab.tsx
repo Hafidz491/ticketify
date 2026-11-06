@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { IBooking } from '@/lib/types';
-import { ScanLine, CheckCircle2, AlertCircle } from 'lucide-react';
+import { ScanLine, CheckCircle2, AlertCircle, ShieldCheck, Ticket } from 'lucide-react';
+import LiveQRScanner from './LiveQRScanner';
 
 interface AdminCheckInTabProps {
   bookings: IBooking[];
@@ -37,116 +38,128 @@ export default function AdminCheckInTab({
         </p>
       </div>
 
-      {/* Scanner Control Box */}
-      <div
-        style={{
-          backgroundColor: 'var(--bg-surface)',
-          border: '1px solid var(--border-default)',
-          borderRadius: 'var(--radius-xl)',
-          padding: '1.75rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '1.25rem',
-          boxShadow: 'var(--shadow-md)',
-        }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div
-            style={{
-              width: '36px',
-              height: '36px',
-              borderRadius: '50%',
-              backgroundColor: 'rgba(56, 189, 248, 0.15)',
-              color: '#0284c7',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <ScanLine size={18} />
-          </div>
-          <div>
-            <h3 style={{ fontSize: '1.05rem', fontWeight: 700, margin: 0 }}>
-              Input atau Scan Kode Tiket
-            </h3>
-            <span style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>
-              Masukkan kode tiket pengunjung (misal: TCK-782914)
-            </span>
-          </div>
-        </div>
-
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            onExecuteCheckIn();
+      {/* Grid: Live Camera Scanner & Manual Input */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
+        {/* 1. Live Camera QR Scanner */}
+        <LiveQRScanner
+          isLoading={scanLoading}
+          onScanSuccess={(code) => {
+            setScanCode(code);
+            onExecuteCheckIn(code);
           }}
-          style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}
-        >
-          <input
-            type="text"
-            value={scanCode}
-            onChange={(e) => setScanCode(e.target.value.toUpperCase())}
-            placeholder="Contoh: TCK-782914"
-            style={{
-              flex: 1,
-              minWidth: '220px',
-              height: '46px',
-              padding: '0 1.15rem',
-              borderRadius: 'var(--radius-md)',
-              backgroundColor: 'var(--bg-glass-input)',
-              fontFamily: 'monospace',
-              fontSize: '1.05rem',
-              fontWeight: 800,
-              letterSpacing: '0.05em',
-            }}
-          />
-          <button
-            type="submit"
-            disabled={scanLoading || !scanCode.trim()}
-            className="btn-primary"
-            style={{
-              height: '46px',
-              padding: '0 1.5rem',
-              fontSize: '0.88rem',
-              fontWeight: 700,
-              gap: '0.5rem',
-            }}
-          >
-            <ScanLine size={17} />
-            <span>{scanLoading ? 'Memvalidasi...' : 'Verifikasi & Check-In'}</span>
-          </button>
-        </form>
+        />
 
-        {/* Quick Selection from Recent Bookings */}
-        <div>
-          <span style={{ fontSize: '0.74rem', color: 'var(--text-secondary)', display: 'block', marginBottom: '0.45rem', fontWeight: 600 }}>
-            Pilih Cepat Tiket Terdaftar untuk Uji Coba:
-          </span>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.45rem' }}>
-            {bookings.slice(0, 8).map((b) => (
-              <button
-                key={b._id}
-                type="button"
-                onClick={() => {
-                  setScanCode(b.bookingCode);
-                  onExecuteCheckIn(b.bookingCode);
-                }}
-                style={{
-                  fontSize: '0.72rem',
-                  fontFamily: 'monospace',
-                  fontWeight: 700,
-                  padding: '0.25rem 0.65rem',
-                  borderRadius: 'var(--radius-pill)',
-                  border: '1px solid var(--border-default)',
-                  backgroundColor: b.status === 'CHECKED_IN' ? 'rgba(168, 85, 247, 0.12)' : 'var(--bg-surface-elevated)',
-                  color: b.status === 'CHECKED_IN' ? '#a855f7' : 'var(--text-primary)',
-                  cursor: 'pointer',
-                }}
-                title={`Status: ${b.status} - ${b.buyer.fullName}`}
-              >
-                {b.bookingCode} {b.status === 'CHECKED_IN' ? '✓ (Sudah Masuk)' : ''}
-              </button>
-            ))}
+        {/* 2. Manual Input Box & Quick Select */}
+        <div
+          style={{
+            backgroundColor: 'var(--bg-surface)',
+            border: '1px solid var(--border-default)',
+            borderRadius: 'var(--radius-xl)',
+            padding: '1.5rem',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1.25rem',
+            boxShadow: 'var(--shadow-md)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <div
+              style={{
+                width: '34px',
+                height: '34px',
+                borderRadius: '8px',
+                backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                color: '#0284c7',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <ScanLine size={18} />
+            </div>
+            <div>
+              <h3 style={{ fontSize: '1rem', fontWeight: 700, margin: 0 }}>
+                Input Manual Kode Tiket
+              </h3>
+              <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
+                Ketik jika barcode/QR fisik kotor atau tidak terbaca
+              </span>
+            </div>
+          </div>
+
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              onExecuteCheckIn();
+            }}
+            style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap' }}
+          >
+            <input
+              type="text"
+              value={scanCode}
+              onChange={(e) => setScanCode(e.target.value.toUpperCase())}
+              placeholder="Contoh: TCK-782914"
+              style={{
+                flex: 1,
+                minWidth: '180px',
+                height: '44px',
+                padding: '0 1rem',
+                borderRadius: 'var(--radius-md)',
+                backgroundColor: 'var(--bg-glass-input)',
+                fontFamily: 'monospace',
+                fontSize: '1rem',
+                fontWeight: 800,
+                letterSpacing: '0.05em',
+              }}
+            />
+            <button
+              type="submit"
+              disabled={scanLoading || !scanCode.trim()}
+              className="btn-primary"
+              style={{
+                height: '44px',
+                padding: '0 1.25rem',
+                fontSize: '0.84rem',
+                fontWeight: 700,
+                gap: '0.4rem',
+              }}
+            >
+              <ScanLine size={16} />
+              <span>{scanLoading ? 'Memvalidasi...' : 'Verifikasi'}</span>
+            </button>
+          </form>
+
+          {/* Quick Selection from Recent Bookings */}
+          <div>
+            <span style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block', marginBottom: '0.45rem', fontWeight: 600 }}>
+              Pilih Cepat Tiket Terdaftar untuk Uji Coba:
+            </span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+              {bookings.slice(0, 8).map((b) => (
+                <button
+                  key={b._id}
+                  type="button"
+                  onClick={() => {
+                    setScanCode(b.bookingCode);
+                    onExecuteCheckIn(b.bookingCode);
+                  }}
+                  style={{
+                    fontSize: '0.7rem',
+                    fontFamily: 'monospace',
+                    fontWeight: 700,
+                    padding: '0.2rem 0.55rem',
+                    borderRadius: 'var(--radius-pill)',
+                    border: '1px solid var(--border-default)',
+                    backgroundColor: b.status === 'CHECKED_IN' ? 'rgba(168, 85, 247, 0.12)' : 'var(--bg-surface-elevated)',
+                    color: b.status === 'CHECKED_IN' ? '#a855f7' : 'var(--text-primary)',
+                    cursor: 'pointer',
+                  }}
+                  title={`Status: ${b.status} - ${b.buyer.fullName}`}
+                >
+                  {b.bookingCode} {b.status === 'CHECKED_IN' ? '✓ (Masuk)' : ''}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -290,4 +303,3 @@ export default function AdminCheckInTab({
     </div>
   );
 }
-
